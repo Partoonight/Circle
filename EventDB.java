@@ -178,7 +178,7 @@ public class EventDB {
 
     static class DBhelper extends SQLiteOpenHelper {
 
-        public static final String DATABASE_NAME = "someDB2";
+        public static final String DATABASE_NAME = "someDB3";
         public static final String EVENT_TABLE_NAME = "events";
         public static final String EVENT_COLUMN_ID = "id";
         public static final String EVENT_COLUMN_LATITUDE = "latitude";
@@ -190,7 +190,7 @@ public class EventDB {
         public static final String EVENT_COLUMN_COST = "cost";
         public static final String EVENT_COLUMN_HOST = "host";
 
-        public static final int EVENT_TABLE_VERSION = 2;
+        public static final int EVENT_TABLE_VERSION = 1;
 
         public DBhelper(Context context) {
             super(context, DATABASE_NAME, null, EVENT_TABLE_VERSION);
@@ -236,18 +236,6 @@ public class EventDB {
             return true;
         }
 
-        public Cursor getData(int id) {
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor res = db.rawQuery("select * from contacts where id=" + id + "", null);
-            return res;
-        }
-
-        public int numberOfRows() {
-            SQLiteDatabase db = this.getReadableDatabase();
-            int numRows = (int) DatabaseUtils.queryNumEntries(db, EVENT_TABLE_NAME);
-            return numRows;
-        }
-
         public boolean updateContact(Integer id, String name, String phone, String email, String street, String password) {
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
@@ -267,20 +255,6 @@ public class EventDB {
                     new String[]{Integer.toString(id)});
         }
 
-        public ArrayList<String> getAllCotacts() {
-            ArrayList<String> array_list = new ArrayList<String>();
-
-            //hp = new HashMap();
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor res = db.rawQuery("select * from contacts", null);
-            res.moveToFirst();
-
-            while (res.isAfterLast() == false) {
-                array_list.add(res.getString(res.getColumnIndex(EVENT_COLUMN_TITLE)));
-                res.moveToNext();
-            }
-            return array_list;
-        }
 
     }
 }
