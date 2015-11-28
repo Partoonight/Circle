@@ -66,22 +66,115 @@ public class EventDB {
             Log.v("EventData", uid +" "+ latitude +" "+  longitude +" "+  time +" "+  duration +" "+  title +" "+  description +" "+  cost +" "+  host);
         }
     }
-    public void getData(int position){
+    public float getLat(int id){
         SQLiteDatabase db = helper.getWritableDatabase();
-        Cursor cursor = db.query(DBhelper.EVENT_TABLE_NAME, columns, null, null, null, null, null);
-        int uid = cursor.getInt(cursor.getColumnIndex(columns[0]));
-        float latitude  = cursor.getFloat(cursor.getColumnIndex(columns[1]));
-        float longitude  = cursor.getFloat(cursor.getColumnIndex(columns[2]));
-        float time  = cursor.getFloat(cursor.getColumnIndex(columns[3]));
-        float duration  = cursor.getFloat(cursor.getColumnIndex(columns[4]));
-        String title  = cursor.getString(cursor.getColumnIndex(columns[5]));
-        String description = cursor.getString(cursor.getColumnIndex(columns[6]));
-        float cost  = cursor.getFloat(cursor.getColumnIndex(columns[7]));
-        String host = cursor.getString(cursor.getColumnIndex(columns[8]));
-
-
+        Cursor cursor = db.rawQuery("SELECT id, latitude FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        float x = -1;
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(cursor.getColumnIndex(columns[0]));
+            if(uid == id) {
+                x = cursor.getFloat(1);
+                Log.v("latitude","found" + x + " -- ");
+            }
+        }
+        return x;
     }
-
+    public float getLong(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, longitude FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        float x = -1;
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getFloat(1);
+                Log.v("longitude","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public float getTime(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, time FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        float x = -1;
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getFloat(1);
+                Log.v("time","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public float getDuration(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, duration FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        float x = -1;
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getFloat(1);
+                Log.v("duration","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public String getTitle(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, title FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        String x = "";
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getString(1);
+                Log.v("title","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public String getDescription(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, description FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        String x = "";
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getString(1);
+                Log.v("description","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public float getCost(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, cost FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        float x = -1;
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getFloat(1);
+                Log.v("cost","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public String getHost(int id){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, host FROM " + DBhelper.EVENT_TABLE_NAME, null);
+        String x = "";
+        while(cursor.moveToNext()) {
+            int uid = cursor.getInt(0);
+            if(uid == id) {
+                x = cursor.getString(1);
+                Log.v("host","found" + x + " -- ");
+            }
+        }
+        return x;
+    }
+    public int numberOfRows() {
+        SQLiteDatabase db = helper.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, DBhelper.EVENT_TABLE_NAME);
+        return numRows;
+    }
 
     static class DBhelper extends SQLiteOpenHelper {
 
