@@ -15,7 +15,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Test"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/login_button" />
 
 </RelativeLayout>
