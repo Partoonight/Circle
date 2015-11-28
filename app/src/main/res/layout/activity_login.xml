@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.neozhang.circle.LoginActivity"
-    android:id="@+id/root_login_view">
+    android:id="@+id/root_login_view"
+    android:background="@drawable/bg2">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
