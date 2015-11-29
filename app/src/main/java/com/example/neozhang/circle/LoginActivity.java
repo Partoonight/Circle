@@ -19,13 +19,14 @@ public class LoginActivity extends AppCompatActivity {
     LoginButton loginButton;
     Button button;//test
     CallbackManager callbackManager;
+    EventDB eventDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
-
+        eventDB = new EventDB(this);
 
         View view = findViewById(R.id.root_login_view);
 
@@ -77,4 +78,8 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void uploadData(View view){
+        eventDB.insertData(43.010517,-81.2754176, 9, 8, "Pictures with Santa", "Come to the Natural Science Center to take pictures with santa!", 0, "SSC");
+        eventDB.insertData(43.010517,-81.2754176, 9, 8, "Pictures with Santa", "Come to the Natural Science Center to take pictures with santa!", 0, "SSC");
+    }
 }
