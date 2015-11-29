@@ -19,13 +19,14 @@ public class LoginActivity extends AppCompatActivity {
     LoginButton loginButton;
     Button button;//test
     CallbackManager callbackManager;
+    EventDB eventDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
-
+        eventDB = new EventDB(this);
 
         View view = findViewById(R.id.root_login_view);
 
@@ -77,4 +78,10 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void uploadData(){
+        eventDB.insertData(43.010517,-81.2754176, 9, 8, "Pictures with Santa", "Come to the Natural Science Center to take pictures with santa!", 0, "SSC");
+        eventDB.insertData(42.9942735,-81.2548803, 17, 5, "Aroma Grand Opening!", "Amazing food, excellent company, and a career-changing lesson on Dining Etiquette by Jana Seijts, how can the night get better? Answer - it can't.", 0, "Aroma Restaurant");
+        eventDB.insertData(42.0089911,-81.279889, 17, 3, "Rwanda Recovering?", "Come join the Huron Political Science Club for our inaugural event! Dr. Scorgie-Porter will be giving a talk on the politics of Rwanda, drawing on her experience at a conference in Rwanda that she recently attended.", 0, "Cat Phelphs");
+        eventDB.insertData(43.009601,-81.2759223, 10, 6, "Rotaract Holiday Polaroid Booth", "All proceeds from the event will go to our Juvenille Diabetes Camp. JDC is a weekend camp for families with young kids diagnosed with juvenile diabetes. The camp is free of charge for these families and all proceeds from this event will help fund the initiative!", 0, "UWO Rotaract");
+    }
 }
