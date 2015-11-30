@@ -11,6 +11,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -57,7 +58,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
      * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
+     * If Google Play services is not installed on the device, the user will be prompted
+     * to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
@@ -74,6 +76,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         for (int i=1; i<=length; i++){
             addEventMarker(map, i);
         }
+
+        map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                Intent intent = new Intent(MapsActivity.this, EventActivity.class);
+                startActivity(intent);
+                return false;
+            }
+        });
     }
 
     public void addEventMarker(GoogleMap map, int index){
@@ -81,6 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String eventTitle = eventDB.getTitle(index);
         String eventDescription = eventDB.getDescription(index);
         map.addMarker(new MarkerOptions().title(eventTitle).snippet(eventDescription).position(eventLocation));
+
     }
 
 }

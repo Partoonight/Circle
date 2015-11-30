@@ -1,0 +1,34 @@
+public class User{
+	
+	//constructor
+	private String userName, password; 
+	private Event[] historyEventList, comingEventList;
+	private LatLng  userLocation;
+	
+	//field 
+	public User(String name, String password, Event[] history, Event[] coming, LatLng location){
+		this.userName = name;
+		this.password = password;
+		this.historyEventList = history;
+		this.comingEventList = coming;
+		this.userLocation = location;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public Event[] getHistoryEventList(){
+		return historyEventList;
+	}
+	
+	public Event[] getComingEventList(){
+		return comingEventList;
+	}
+	
+	public LatLng getLocation(){
+		return this.userLocation;
+	}
+	
+	
+}
