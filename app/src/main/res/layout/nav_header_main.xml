@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/side_nav_bar"
+<<<<<<< HEAD
     android:gravity="bottom"
+=======
+    android:gravity="top"
+>>>>>>> refs/heads/master
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -11,6 +15,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
 
+<<<<<<< HEAD
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -23,12 +28,107 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Android Studio"
+=======
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:id="@+id/button3"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+
+
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Listing"
+        android:id="@+id/button2"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event History"
+        android:id="@+id/button4"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:id="@+id/button5"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:id="@+id/button6"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interest"
+        android:id="@+id/button7"
+        android:gravity="left"
+        android:background="@null"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:src="@drawable/wheel" />
+
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:gravity="left"
+
+        android:text="Settings"
+        android:textColor="#FFFFFF"
+>>>>>>> refs/heads/master
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="android.studio@android.com" />
+=======
+        android:text="Circle" />
+>>>>>>> refs/heads/master
 
 </LinearLayout>

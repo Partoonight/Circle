@@ -26,6 +26,23 @@
         android:text="Login Test"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
+<<<<<<< HEAD
         android:layout_alignEnd="@+id/login_button" />
 
+=======
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView2"
+        android:gravity="center"
+        android:src="@drawable/loog"
+        android:layout_marginLeft="100dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/login_button" />
+
+
+>>>>>>> refs/heads/master
 </RelativeLayout>

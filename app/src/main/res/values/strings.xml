@@ -8,4 +8,8 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="app_id">1011147395575170</string>
     <string name="title_activity_maps">Map</string>>
+<<<<<<< HEAD
+=======
+    <string name="title_activity_events">events</string>>
+>>>>>>> refs/heads/master
 </resources>

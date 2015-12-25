@@ -12,7 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+<<<<<<< HEAD
         android:name=".MyApplication"
+=======
+>>>>>>> refs/heads/master
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -53,6 +56,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
+<<<<<<< HEAD
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"/>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -60,6 +64,23 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+=======
+            android:name=".Events"
+            android:label="@string/title_activity_events"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".EventActivity"></activity>
+>>>>>>> refs/heads/master
     </application>
 
 </manifest>
